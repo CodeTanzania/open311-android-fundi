@@ -31,6 +31,7 @@ os:
   - linux
 
 before_install:
+  - bash .travis-android-license.sh # it is a bug in travis and this is one of the hacks
   - chmod +x gradlew
 
 
