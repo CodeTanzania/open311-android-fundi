@@ -26,10 +26,10 @@ android:
 jdk: oraclejdk8
 
 os:
-    - linux
+  - linux
 
 before_install:
-    - chmod +x gradlew
+  - chmod +x gradlew
 
 # safelist branches which will be built
 branches:
