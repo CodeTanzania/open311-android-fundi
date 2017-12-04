@@ -30,6 +30,9 @@ os:
 
 before_install:
   - chmod +x gradlew
+  # For newer Android SDK:
+  - sdkmanager "extras;android;m2repository"
+  - sdkmanager "extras;google;m2repository"
 
 # safelist branches which will be built
 branches:
