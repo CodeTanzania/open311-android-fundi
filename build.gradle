@@ -38,6 +38,7 @@ ext {
     junitVersion = '4.12'
     expressoVersion = '3.0.1'
     androidTestRunnerVersion = '1.0.1'
+    roboelectricVersion = '3.5.1'
 }
 
 task clean(type: Delete) {
