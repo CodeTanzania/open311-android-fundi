@@ -5,15 +5,16 @@ ext.versionMinor = 1
 ext.versionPatch = 0
 
 def generateVersionCode() {
-    return (versionMajor * 1000) + (versionMinor * 100) + (versionPatch * 10);
+    return (versionMajor * 1000) + (versionMinor * 100) + (versionPatch * 10)
 }
 
 def generateVersionName() {
-    return "${versionMajor}.${versionMinor}.${versionPatch}";
+    return "${versionMajor}.${versionMinor}.${versionPatch}"
 }
 
 android {
     compileSdkVersion versions.compileSdkVersion
+    buildToolsVersion versions.buildToolsVersion
     defaultConfig {
         applicationId "com.github.codetanzania.open311.android.fundi"
         minSdkVersion versions.minSdkVersion
@@ -28,12 +29,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
     //local libs
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    
+
     //android support
     implementation "com.android.support:appcompat-v7:$androidSupportVersion"
     implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
@@ -42,4 +49,5 @@ dependencies {
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "com.android.support.test:runner:$androidTestRunnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$expressoVersion"
+    testImplementation "org.robolectric:robolectric:$roboelectricVersion"
 }

@@ -2,18 +2,18 @@
 
 buildscript {
     ext.versions = [
-        'compileSdkVersion' : 26,
-        'minSdkVersion' : 15,
-        'targetSdkVersion' : 26
+            'compileSdkVersion': 26,
+            'minSdkVersion'    : 15,
+            'targetSdkVersion' : 26,
+            'buildToolsVersion': '26.0.2'
     ]
-    
+
     repositories {
         google()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
-        
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -24,10 +24,11 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io'}
     }
 }
 
-ext{
+ext {
     rxjavaVersion = '2.1.3'
     rxandroidVersion = '2.0.1'
     rxbindingVersion = '2.0.0'
@@ -37,7 +38,8 @@ ext{
     constraintLayoutVersion = '1.0.2'
     junitVersion = '4.12'
     expressoVersion = '3.0.1'
-    androidTestRunnerVersion = '1.0.1'   
+    androidTestRunnerVersion = '1.0.1'
+    roboelectricVersion = '3.5.1'
 }
 
 task clean(type: Delete) {
